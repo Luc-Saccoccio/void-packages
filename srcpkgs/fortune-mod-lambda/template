@@ -1,0 +1,21 @@
+# Template file for 'fortune-mod-lambda'
+pkgname=fortune-mod-lambda
+version=11
+revision=1
+hostmakedepends="fortune-mod"
+depends="${hostmakedepends}"
+short_desc="Collection of fortune cookies with the lambda nature"
+maintainer="Luc Saccoccio--Le Guennec <lucsaccoccio@disroot.org>"
+license="Public Domain"
+homepage="http://www.gotlisp.com/lambda/"
+
+do_fetch() {
+	$XBPS_FETCH_CMD http://www.gotlisp.com/lambda/lambda.dat \
+		http://www.gotlisp.com/lambda/lambda.txt
+}
+
+do_install() {
+	vmkdir usr/share/fortunes
+	vcopy $XBPS_BUILDDIR/lambda.dat usr/share/fortunes
+	vcopy $XBPS_BUILDDIR/lambda.txt usr/share/fortunes/lambda
+}
