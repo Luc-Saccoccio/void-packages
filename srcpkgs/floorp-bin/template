@@ -1,0 +1,21 @@
+# Template file for 'floorp-bin'
+pkgname=floorp-bin
+version=12.15.3
+revision=1
+short_desc="Floorp browser"
+maintainer="Luc-Saccoccio <lucsaccoccio@disroot.org>"
+license="custom"
+homepage="https://floorp.app/"
+distfiles="https://github.com/Floorp-Projects/Floorp/releases/download/v${version}/floorp-linux-x86_64.tar.xz"
+checksum=91f1d86ce8ac3bd5ede316066fda2e3227c133c98995d6564168fb92bb9c9e21
+nopie=yes
+
+do_install() {
+	vmkdir usr/lib/floorp
+	vcopy * usr/lib/floorp
+
+	vmkdir usr/bin
+	ln -sf /usr/lib/floorp/floorp ${DESTDIR}/usr/bin
+
+	vinstall ${FILESDIR}/floorp.desktop 644 usr/share/applications
+}
