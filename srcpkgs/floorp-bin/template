@@ -1,13 +1,13 @@
 # Template file for 'floorp-bin'
 pkgname=floorp-bin
-version=12.16.2
+version=12.16.3
 revision=1
 short_desc="Floorp browser"
 maintainer="Luc-Saccoccio <lucsaccoccio@disroot.org>"
 license="custom"
 homepage="https://floorp.app/"
 distfiles="https://github.com/Floorp-Projects/Floorp/releases/download/v${version}/floorp-linux-x86_64.tar.xz"
-checksum=ea24310137963dca80c817fa9acfbbcf34abd21492517fa37d1a7a91430d19a6
+checksum=314e1eaa1a6a34bbc5729ce1fc9c1810096e441679a7cd1f4063efc765adbdce
 nopie=yes
 
 do_install() {
